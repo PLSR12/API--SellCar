@@ -1,22 +1,21 @@
-import { v4 } from "uuid"
-import * as Yup from "yup"
-import jwt from "jsonwebtoken"
-import authConfig from "../../config/auth"
+import { v4 } from 'uuid'
+import * as Yup from 'yup'
+import jwt from 'jsonwebtoken'
+import authConfig from '../../config/auth'
 
-import User from "../models/User"
+import User from '../models/User'
 
 class UserController {
   async store(request, response) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       last_name: Yup.string().required(),
-      birth_date: Yup.string().required(),
       number: Yup.string().required(),
       email: Yup.string().email().required(),
       state: Yup.string().required(),
       city: Yup.string().required(),
       password: Yup.string().required().min(6),
-      allow_show_email: Yup.boolean()
+      allow_show_email: Yup.boolean(),
     })
 
     try {
@@ -28,48 +27,45 @@ class UserController {
     const {
       name,
       last_name,
-      birth_date,
       number,
       email,
       state,
       city,
       password,
-      allow_show_email
+      allow_show_email,
     } = request.body
 
     const userExists = await User.findOne({
       where: {
-        email
-      }
+        email,
+      },
     })
 
     if (userExists) {
-      return response.status(409).json({ error: "User already exists" })
+      return response.status(409).json({ error: 'User already exists' })
     }
 
     const user = await User.create({
       id: v4(),
       name,
       last_name,
-      birth_date,
       number,
       email,
       state,
       city,
       password,
-      allow_show_email
+      allow_show_email,
     })
 
     return response.status(201).json({
       id: user.id,
       name,
       last_name,
-      birth_date,
       number,
       state,
       city,
       email,
-      allow_show_email
+      allow_show_email,
     })
   }
 
@@ -96,7 +92,7 @@ class UserController {
       state: Yup.string(),
       city: Yup.string(),
       password: Yup.string().min(6),
-      allow_show_email: Yup.boolean()
+      allow_show_email: Yup.boolean(),
     })
 
     try {
@@ -112,52 +108,49 @@ class UserController {
     if (!findUser) {
       return response
         .status(401)
-        .json({ error: "Make sure your user id is correct" })
+        .json({ error: 'Make sure your user id is correct' })
     }
 
     const {
       name,
       last_name,
-      birth_date,
       number,
       email,
       state,
       city,
       password,
-      allow_show_email
+      allow_show_email,
     } = request.body
 
     await User.update(
       {
         name,
         last_name,
-        birth_date,
         number,
         email,
         state,
         city,
         password,
-        allow_show_email
+        allow_show_email,
       },
       {
         where: {
-          id
-        }
+          id,
+        },
       }
     )
 
     return response.status(200).json({
       name,
       last_name,
-      birth_date,
       number,
       state,
       city,
       email,
       allow_show_email,
       token: jwt.sign({ id: findUser.id }, authConfig.secret, {
-        expiresIn: authConfig.expiresIn
-      })
+        expiresIn: authConfig.expiresIn,
+      }),
     })
   }
 }

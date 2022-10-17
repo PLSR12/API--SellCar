@@ -1,4 +1,4 @@
-import Sequelize, { Model } from "sequelize"
+import Sequelize, { Model } from 'sequelize'
 
 class Car extends Model {
   static init(sequelize) {
@@ -21,12 +21,12 @@ class Car extends Model {
         url: {
           type: Sequelize.VIRTUAL,
           get() {
-            return `http://localhost:3000/car-file/${this.path}`
-          }
-        }
+            return `http://localhost:3100/car-file/${this.path}`
+          },
+        },
       },
       {
-        sequelize
+        sequelize,
       }
     )
     return this
@@ -34,12 +34,12 @@ class Car extends Model {
 
   static associate(models) {
     this.belongsTo(models.Category, {
-      foreignKey: "category_id",
-      as: "category"
+      foreignKey: 'category_id',
+      as: 'category',
     })
     this.belongsTo(models.User, {
-      foreignKey: "user_email",
-      as: "user"
+      foreignKey: 'user_email',
+      as: 'user',
     })
   }
 }

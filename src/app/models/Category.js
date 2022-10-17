@@ -1,4 +1,4 @@
-import Sequelize, { Model } from "sequelize"
+import Sequelize, { Model } from 'sequelize'
 
 class Category extends Model {
   static init(sequelize) {
@@ -9,12 +9,12 @@ class Category extends Model {
         url: {
           type: Sequelize.VIRTUAL,
           get() {
-            return `http://localhost:3000/category-file/${this.path}`
-          }
-        }
+            return `http://localhost:3100/category-file/${this.path}`
+          },
+        },
       },
       {
-        sequelize
+        sequelize,
       }
     )
     return this
