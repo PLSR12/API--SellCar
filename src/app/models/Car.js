@@ -21,7 +21,7 @@ class Car extends Model {
         url: {
           type: Sequelize.VIRTUAL,
           get() {
-            return `http://localhost:3100/car-file/${this.path}`
+            return `https://api-sellcar-production.up.railway.app/car-file/${this.path}`
           },
         },
       },
