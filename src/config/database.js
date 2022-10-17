@@ -1,10 +1,10 @@
 module.exports = {
   dialect: 'postgres',
-  host: 'containers-us-west-65.railway.app',
+  host: 'containers-us-west-32.railway.app',
   username: 'postgres',
-  password: 'YYU2E2w9OdtctH3ZzIm3',
+  password: 'xGTa694yyqqDzjDS6ovI',
   database: 'railway',
-  port: 7520,
+  port: 6332,
   define: {
     timespamps: true,
     underscored: true,
