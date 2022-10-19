@@ -34,14 +34,16 @@ Na criação da API foi utilizado Express, JWT, yup, a biblioteca uuid, e o ORM 
 
 Made with ♥ by Pedro Dos Santos :wave: [Get in touch!](https://www.linkedin.com/in/pedro-lucas-dos-santos/)
 
-## Available Scripts
+## Requisitos para rodar o projeto
 
-In the project directory, you can run:
+### Setup de ambiente:
 
-### `yarn dev`
+- [Node LTS](https://nodejs.org/en/)
+- [Yarn 1.x](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Como rodar na minha máquina?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Clone o projeto
+- Rode `yarn install`
+- Rode `yarn dev`
+- Pronto 🎉
