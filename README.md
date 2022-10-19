@@ -2,6 +2,7 @@
  API - SellCar 
 </h1>
 
+[![licence mit](https://img.shields.io/badge/licence-MIT-blue.svg)](./LICENSE)
 
 <h3 align="center">
   Let's know this repositories.
@@ -17,11 +18,11 @@
 
 <br>
 
-
 ## :house: About the project
-O projeto tem uma proposta similar ao da OLX, com os anúncios e a "conexão" entre o anunciante e o comprador por meio do  contato direto via WhatsApp.
 
-Na criação da API foi utilizado Express, JWT, yup, a biblioteca uuid, e o  ORM Sequelize  para fazer a conexão com os bancos de dados que são o Postgres.
+O projeto tem uma proposta similar ao da OLX, com os anúncios e a "conexão" entre o anunciante e o comprador por meio do contato direto via WhatsApp.
+
+Na criação da API foi utilizado Express, JWT, yup, a biblioteca uuid, e o ORM Sequelize para fazer a conexão com os bancos de dados que são o Postgres.
 
 <br>
 
@@ -31,9 +32,7 @@ Na criação da API foi utilizado Express, JWT, yup, a biblioteca uuid, e o  ORM
 ![NODE](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![POSTGRESQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-
 Made with ♥ by Pedro Dos Santos :wave: [Get in touch!](https://www.linkedin.com/in/pedro-lucas-dos-santos/)
-
 
 ## Available Scripts
 
